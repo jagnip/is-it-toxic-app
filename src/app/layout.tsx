@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${inter.variable} bg-[#F9FBF5] antialiased`}
+        className={`${fraunces.variable} ${inter.variable}  antialiased`}
       >
         <Layout>{children}</Layout>
       </body>
