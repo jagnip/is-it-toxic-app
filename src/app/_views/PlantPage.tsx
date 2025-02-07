@@ -1,8 +1,5 @@
+import PlantDetails from "../_components/PlantDetails";
+
 export default function PlantPage() {
-    return (
-      <>
-        <div>This is plant description</div>
-      </>
-    );
-  }
-  
+  return <h1>Pllaaaants</h1>;
+}

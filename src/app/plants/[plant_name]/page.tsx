@@ -1,5 +1,10 @@
 import PlantPage from "@/app/_views/PlantPage";
 
 export default function Plant() {
-  return <PlantPage />;
+  return (
+    <>
+      {" "}
+      <h1>Hello from plant page</h1>
+    </>
+  );
 }
