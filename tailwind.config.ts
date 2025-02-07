@@ -12,6 +12,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+
+      fontFamily: {
+        fraunces: "var(--font-fraunces)", 
+        inter: "var(--font-inter)", 
+      },
     },
   },
   plugins: [],
