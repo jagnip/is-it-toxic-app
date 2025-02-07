@@ -13,9 +13,18 @@ h1 {
   font-weight: 300;
 }
 
-p, li {
+p,
+li {
   font-family: var(--font-inter);
   font-size: 1rem;
   font-weight: 400;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
