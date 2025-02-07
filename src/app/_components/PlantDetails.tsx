@@ -2,6 +2,20 @@ import { PLANTS } from "../_data/PLANTS";
 
 export default function PlantDetails() {
   const plant = PLANTS["adam-and-eve arum maculatum"];
+
+  if (!plant) return <p>Plant not found</p>;
+
+  const plantDetails: { label: string; value: string | string[] | null }[] = [
+    { label: "Family", value: plant.family },
+    {
+      label: "Common Names",
+      value: plant.commonNames.length > 0 ? plant.commonNames.join(", ") : null,
+    },
+    { label: "Toxic to", value: plant.toxicTo.join(", ") },
+    { label: "Toxic Principles", value: plant.toxicPrinciples },
+    { label: "Clinical Signs", value: plant.clinicalSigns },
+  ];
+
   return (
     <div>
       <button>←</button>
@@ -12,36 +26,13 @@ export default function PlantDetails() {
       <h2>{plant.scientificName}</h2>
 
       <dl>
-        {plant.family && (
-          <div>
-            <dt>Family</dt>
-            <dd>{plant.family}</dd>
-          </div>
-        )}{" "}
-        {plant.commonNames && (
-          <div>
-            <dt>Common names</dt>
-            <dd>{plant.commonNames.join(",  ")}</dd>
-          </div>
-        )}
-        {plant.toxicTo && (
-          <div>
-            <dt>Toxic to</dt>
-            <dd>{plant.toxicTo.join(",  ")}</dd>
-          </div>
-        )}{" "}
-        {plant.toxicPrinciples && (
-          <div>
-            <dt>Toxic principles</dt>
-            <dd>{plant.toxicPrinciples}</dd>
-          </div>
-        )}
-        {plant.clinicalSigns && (
-          <div>
-            <dt>Clinical signs</dt>
-            <dd>{plant.clinicalSigns}</dd>
-          </div>
-        )}
+        {plantDetails
+          .filter(({ value }) => value)
+          .map(({ label, value }) => (
+            <div>
+              <dt>{label}</dt> <dd>{value}</dd>
+            </div>
+          ))}
       </dl>
     </div>
   );
