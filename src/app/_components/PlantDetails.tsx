@@ -23,7 +23,7 @@ export default function PlantDetails() {
   ];
 
   return (
-    <div className="m-4 shadow-lg rounded-xl p-6 bg-white border border-gray-100 ">
+    <div className="shadow-lg rounded-xl p-6 bg-white border border-gray-100 ">
       <div className="flex justify-between">
         <button className="h-6 w-6 rounded-lg bg-neutral-200 transition-[background-color,box-shadow] hover:bg-neutral-300 focus-visible:ring-4 focus-visible:ring-blue-400/50">
           ←
@@ -41,12 +41,12 @@ export default function PlantDetails() {
         <h2 className="mt-4 ">{plant.name}</h2>
         <h3>{plant.scientificName}</h3>
       </div>
-      <dl>
+      <dl className="flex flex-col gap-2">
       {plantDetails
   .filter(({ value }) => value)
   .map(({ label, value }, index, array) => (
     <div key={label}>
-      <div className="flex flex-col">
+      <div>
         <dt className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-neutral-500 md:mb-0">
           {label}
         </dt>
@@ -71,7 +71,7 @@ export default function PlantDetails() {
       </div>
       {/* Hide the last <hr> */}
       {index < array.length - 1 && (
-        <hr className="h-[1px] my-3 bg-neutral-200 md:my-0" />
+        <hr className="h-[1px]  bg-neutral-200 md:my-0" />
       )}
     </div>
   ))}
