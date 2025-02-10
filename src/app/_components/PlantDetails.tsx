@@ -6,17 +6,41 @@ export default function PlantDetails() {
 
   if (!plant) return <p>Plant not found</p>;
 
-  const plantDetails: { label: string; value: string | string[] | null }[] = [
+  const plantDetails: { label: string; value:  React.ReactNode | string | string[] | null }[] = [
     { label: "Family", value: plant.family },
     {
       label: "Common Names",
-      value: plant.commonNames.length > 0 ? plant.commonNames.join(", ") : null,
+      value:
+        plant.commonNames.length > 0 ? (
+          <div className="flex flex-wrap gap-1">
+            {plant.commonNames.map((name) => (
+              <span
+                key={name}
+                className="rounded bg-gray-200 px-2 py-[0.5] "
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+        ) : null,
     },
     {
       label: "Toxic to",
-      value: plant.toxicTo
-        .map((animal) => animalToEmoji[animal] || animal)
-        .join(" "),
+      value:
+        plant.toxicTo.length > 0 ? (
+          <div className="flex flex-wrap gap-1">
+            {plant.toxicTo.map((animal) => (
+              <div
+                className="bg-red-200 text-[#842727] rounded px-2 py-[0.5]"
+                key={animal}
+              >
+                {animalToEmoji[animal]}{" "}
+                {animalToPlural[animal].charAt(0).toUpperCase() +
+                  animalToPlural[animal].slice(1)}
+              </div>
+            ))}
+          </div>
+        ) : null,
     },
     { label: "Toxic Principles", value: plant.toxicPrinciples },
     { label: "Clinical Signs", value: plant.clinicalSigns },
@@ -41,41 +65,24 @@ export default function PlantDetails() {
         <h2 className="mt-4 ">{plant.name}</h2>
         <h3>{plant.scientificName}</h3>
       </div>
-      <dl className="flex flex-col gap-2">
-      {plantDetails
-  .filter(({ value }) => value)
-  .map(({ label, value }, index, array) => (
-    <div key={label}>
-      <div>
-        <dt className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-neutral-500 md:mb-0">
-          {label}
-        </dt>
-        <dd className="flex">
-          {label === "Toxic to" ? (
-            <div className="flex gap-1">
-              {plant.toxicTo.map((animal) => (
-                <div
-                  className="bg-red-200 rounded flex px-2 py-0.5 text-[#842727]"
-                  key={animal}
-                >
-                  {animalToEmoji[animal]}{" "}
-                  {animalToPlural[animal].charAt(0).toUpperCase() +
-                    animalToPlural[animal].slice(1)}
-                </div>
-              ))}
-            </div>
-          ) : (
-            value
-          )}
-        </dd>
+      <dl>
+  {plantDetails
+    .filter(({ value }) => value) 
+    .map(({ label, value }, index, array) => (
+      <div key={label}>
+        <div className="flex flex-col">
+          <dt className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-neutral-500 md:mb-0">
+            {label}
+          </dt>
+          <dd>{value}</dd>
+        </div>
+        {/* Hide the last <hr> */}
+        {index < array.length - 1 && (
+          <hr className="h-[1px] my-3 bg-neutral-200" />
+        )}
       </div>
-      {/* Hide the last <hr> */}
-      {index < array.length - 1 && (
-        <hr className="h-[1px]  bg-neutral-200 md:my-0" />
-      )}
-    </div>
-  ))}
-      </dl>
+    ))}
+</dl>
     </div>
   );
 }
