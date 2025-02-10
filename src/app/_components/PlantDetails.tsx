@@ -1,12 +1,16 @@
 import { PLANTS } from "../_data/PLANTS";
 import { animalToEmoji, animalToPlural } from "../_utils/animalTo";
+import Badge from "./Badge";
 
 export default function PlantDetails() {
   const plant = PLANTS["adam-and-eve arum maculatum"];
 
   if (!plant) return <p>Plant not found</p>;
 
-  const plantDetails: { label: string; value:  React.ReactNode | string | string[] | null }[] = [
+  const plantDetails: {
+    label: string;
+    value: React.ReactNode | string | string[] | null;
+  }[] = [
     { label: "Family", value: plant.family },
     {
       label: "Common Names",
@@ -14,12 +18,9 @@ export default function PlantDetails() {
         plant.commonNames.length > 0 ? (
           <div className="flex flex-wrap gap-1">
             {plant.commonNames.map((name) => (
-              <span
-                key={name}
-                className="rounded bg-gray-200 px-2 py-[0.5] "
-              >
+              <Badge key={name} bgColor="bg-gray-200">
                 {name}
-              </span>
+              </Badge>
             ))}
           </div>
         ) : null,
@@ -30,14 +31,11 @@ export default function PlantDetails() {
         plant.toxicTo.length > 0 ? (
           <div className="flex flex-wrap gap-1">
             {plant.toxicTo.map((animal) => (
-              <div
-                className="bg-red-200 text-[#842727] rounded px-2 py-[0.5]"
-                key={animal}
-              >
-                {animalToEmoji[animal]}{" "}
+              <Badge key={animal} bgColor="bg-red-200" textColor="text-[#842727]">
+                  {animalToEmoji[animal]}{" "}
                 {animalToPlural[animal].charAt(0).toUpperCase() +
                   animalToPlural[animal].slice(1)}
-              </div>
+              </Badge>
             ))}
           </div>
         ) : null,
@@ -66,23 +64,23 @@ export default function PlantDetails() {
         <h3>{plant.scientificName}</h3>
       </div>
       <dl>
-  {plantDetails
-    .filter(({ value }) => value) 
-    .map(({ label, value }, index, array) => (
-      <div key={label}>
-        <div className="flex flex-col">
-          <dt className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-neutral-500 md:mb-0">
-            {label}
-          </dt>
-          <dd>{value}</dd>
-        </div>
-        {/* Hide the last <hr> */}
-        {index < array.length - 1 && (
-          <hr className="h-[1px] my-3 bg-neutral-200" />
-        )}
-      </div>
-    ))}
-</dl>
+        {plantDetails
+          .filter(({ value }) => value)
+          .map(({ label, value }, index, array) => (
+            <div key={label}>
+              <div className="flex flex-col">
+                <dt className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-neutral-500 md:mb-0">
+                  {label}
+                </dt>
+                <dd>{value}</dd>
+              </div>
+              {/* Hide the last <hr> */}
+              {index < array.length - 1 && (
+                <hr className="h-[1px] my-3 bg-neutral-200" />
+              )}
+            </div>
+          ))}
+      </dl>
     </div>
   );
 }
