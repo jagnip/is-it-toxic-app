@@ -3,7 +3,7 @@ import { animalToEmoji } from "../_utils/animalTo";
 
 export default function SearchResults() {
   return (
-    <div className="h-[40vh] overflow-y-auto p-4 scrollbar-hide">
+    <div className="h-[40vh] overflow-y-auto p-4 scrollbar-hide w-full">
       <ul>
         {Object.keys(PLANTS).map((key) => {
           const plant = PLANTS[key];
