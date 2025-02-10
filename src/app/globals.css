@@ -3,28 +3,29 @@
 @tailwind utilities;
 
 body {
-  background: #f9fbf5;
+  @apply bg-[#f9fbf5] font-inter;
 }
 
 h1 {
-  font-family: var(--font-fraunces), serif;
-  font-size: 4.2rem;
-  letter-spacing: -3px;
-  font-weight: 300;
+  @apply font-fraunces text-[4.2rem] tracking-[-3px] font-light;
+}
+
+h2 {
+  @apply font-fraunces tracking-[-3px] font-light text-[3rem] sm:text-[3.75rem] md:text-[4.5rem];
+}
+
+h3 {
+  @apply pb-6 text-xl font-light italic tracking-tight text-neutral-500 md:pb-10 md:text-2xl;
 }
 
 p,
 li {
-  font-family: var(--font-inter);
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+  @apply font-inter text-base font-normal;
 }
 
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
