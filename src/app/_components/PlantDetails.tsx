@@ -1,52 +1,24 @@
+import { Plant } from "@/types";
 import { PLANTS } from "../_data/PLANTS";
 import { animalToEmoji, animalToPlural } from "../_utils/animalTo";
 import Badge from "./Badge";
 import PlantHeader from "./PlantHeader";
+import PlantList from "./PlantList";
 
 export default function PlantDetails() {
   const plant = PLANTS["adam-and-eve arum maculatum"];
 
   if (!plant) return <p>Plant not found</p>;
 
-  const plantDetails: {
-    label: string;
-    value: React.ReactNode | string | string[] | null;
-  }[] = [
-    { label: "Family", value: plant.family },
-    {
-      label: "Common Names",
-      value:
-        plant.commonNames.length > 0 ? (
-          <div className="flex flex-wrap gap-1">
-            {plant.commonNames.map((name) => (
-              <Badge key={name} bgColor="bg-gray-200">
-                {name}
-              </Badge>
-            ))}
-          </div>
-        ) : null,
-    },
-    {
-      label: "Toxic to",
-      value:
-        plant.toxicTo.length > 0 ? (
-          <div className="flex flex-wrap gap-1">
-            {plant.toxicTo.map((animal) => (
-              <Badge
-                key={animal}
-                bgColor="bg-red-200"
-                textColor="text-[#842727]"
-              >
-                {animalToEmoji[animal]}{" "}
-                {animalToPlural[animal].charAt(0).toUpperCase() +
-                  animalToPlural[animal].slice(1)}
-              </Badge>
-            ))}
-          </div>
-        ) : null,
-    },
-    { label: "Toxic Principles", value: plant.toxicPrinciples },
-    { label: "Clinical Signs", value: plant.clinicalSigns },
+  const plantLabelsAndFields: { label: string; key: keyof Plant }[] = [
+    { label: "Common Names", key: "commonNames" },
+    { label: "Family", key: "family" },
+    { label: "Scientific Name", key: "scientificName" },
+    { label: "Toxic To", key: "toxicTo" },
+    { label: "Toxic Principles", key: "toxicPrinciples" },
+    { label: "Clinical Signs", key: "clinicalSigns" },
+    { label: "ASPCA Link", key: "link" },
+    { label: "Image", key: "imageUrl" },
   ];
 
   return (
@@ -57,15 +29,15 @@ export default function PlantDetails() {
         scientificName={plant.scientificName}
       />
       <dl>
-        {plantDetails
-          .filter(({ value }) => value)
-          .map(({ label, value }, index, array) => (
+        {plantLabelsAndFields
+          .filter(({ key }) => plant[key])
+          .map(({ label, key }, index, array) => (
             <div key={label}>
               <div className="flex flex-col">
                 <dt className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-neutral-500 md:mb-0">
                   {label}
                 </dt>
-                <dd>{value}</dd>
+                <dd>{plant[key]}</dd>
               </div>
               {/* Hide the last <hr> */}
               {index < array.length - 1 && (
