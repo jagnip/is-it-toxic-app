@@ -1,6 +1,7 @@
 import { PLANTS } from "../_data/PLANTS";
 import { animalToEmoji, animalToPlural } from "../_utils/animalTo";
 import Badge from "./Badge";
+import PlantHeader from "./PlantHeader";
 
 export default function PlantDetails() {
   const plant = PLANTS["adam-and-eve arum maculatum"];
@@ -31,8 +32,12 @@ export default function PlantDetails() {
         plant.toxicTo.length > 0 ? (
           <div className="flex flex-wrap gap-1">
             {plant.toxicTo.map((animal) => (
-              <Badge key={animal} bgColor="bg-red-200" textColor="text-[#842727]">
-                  {animalToEmoji[animal]}{" "}
+              <Badge
+                key={animal}
+                bgColor="bg-red-200"
+                textColor="text-[#842727]"
+              >
+                {animalToEmoji[animal]}{" "}
                 {animalToPlural[animal].charAt(0).toUpperCase() +
                   animalToPlural[animal].slice(1)}
               </Badge>
@@ -46,23 +51,11 @@ export default function PlantDetails() {
 
   return (
     <div className="shadow-lg rounded-xl p-6 bg-white border border-gray-100 max-w-3xl">
-      <div className="flex justify-between">
-        <button className="h-6 w-6 rounded-lg bg-neutral-200 hover:bg-neutral-300 focus-visible:ring-4 focus-visible:ring-blue-400/50">
-          ←
-        </button>
-        <a
-          href={plant.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-sm text-neutral-500 transition-[color,box-shadow] after:content-['_↗'] hover:text-black focus-visible:ring-4 focus-visible:ring-blue-400/50"
-        >
-          ASPCA Website
-        </a>
-      </div>
-      <div className="flex flex-col">
-        <h2 className="mt-4 ">{plant.name}</h2>
-        <h3>{plant.scientificName}</h3>
-      </div>
+      <PlantHeader
+        link={plant.link}
+        name={plant.name}
+        scientificName={plant.scientificName}
+      />
       <dl>
         {plantDetails
           .filter(({ value }) => value)
