@@ -1,12 +1,15 @@
-
 import { PLANTS } from "../_data/PLANTS";
 import { animalToEmoji, animalToPlural } from "../_utils/animalTo";
 import Badge from "./Badge";
 import PlantHeader from "./PlantHeader";
 import PlantList from "./PlantList";
 
-export default function PlantDetails() {
-  const plant = PLANTS["adam-and-eve arum maculatum"];
+interface PlantDetailsProps {
+  plantId: string;
+}
+
+export default function PlantDetails({ plantId }: PlantDetailsProps) {
+  const plant = PLANTS[plantId];
 
   if (!plant) return <p>Plant not found</p>;
 
@@ -17,7 +20,7 @@ export default function PlantDetails() {
         name={plant.name}
         scientificName={plant.scientificName}
       />
-      <PlantList />
+      <PlantList plant={plant} />
     </div>
   );
 }
