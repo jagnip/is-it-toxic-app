@@ -1,8 +1,13 @@
 import { Plant } from "@/types";
 
-interface PlantHeaderProps extends Pick<Plant, "name" | "scientificName" | "link"> {}
+interface PlantHeaderProps
+  extends Pick<Plant, "name" | "scientificName" | "link"> {}
 
-export default function PlantHeader({ link, name, scientificName }: PlantHeaderProps) {
+export default function PlantHeader({
+  link,
+  name,
+  scientificName,
+}: PlantHeaderProps) {
   return (
     <div>
       <div className="flex justify-between">

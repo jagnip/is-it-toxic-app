@@ -1,5 +1,5 @@
 import PlantDetails from "../_components/PlantDetails";
 
 export default function PlantPage() {
-  return <PlantDetails />;
+  return <PlantDetails plantId="adam-and-eve arum maculatum" />;
 }

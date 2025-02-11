@@ -1,6 +1,4 @@
 import { PLANTS } from "../_data/PLANTS";
-import { animalToEmoji, animalToPlural } from "../_utils/animalTo";
-import Badge from "./Badge";
 import PlantHeader from "./PlantHeader";
 import PlantList from "./PlantList";
 
