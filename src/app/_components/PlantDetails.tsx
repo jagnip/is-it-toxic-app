@@ -18,7 +18,14 @@ export default function PlantDetails({ plantId }: PlantDetailsProps) {
         name={plant.name}
         scientificName={plant.scientificName}
       />
-      <PlantList plant={plant} />
+      <PlantList
+        commonNames={plant.commonNames}
+        family={plant.family}
+        scientificName={plant.scientificName}
+        toxicTo={plant.toxicTo}
+        toxicPrinciples={plant.toxicPrinciples}
+        clinicalSigns={plant.clinicalSigns}
+      />
     </div>
   );
 }

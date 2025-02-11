@@ -2,53 +2,66 @@ import { animalToEmoji, animalToPlural } from "../_utils/animalTo";
 import Badge from "./Badge";
 import { Plant } from "@/types";
 
-interface PlantListProps {
-  plant: Plant;
-}
+interface PlantListProps
+  extends Pick<
+    Plant,
+    | "commonNames"
+    | "family"
+    | "scientificName"
+    | "toxicTo"
+    | "toxicPrinciples"
+    | "clinicalSigns"
+  > {}
 
-export default function PlantList({ plant }: PlantListProps) {
-  const plantLabelsAndFields: { label: string; key: keyof Plant }[] = [
-    { label: "Common Names", key: "commonNames" },
-    { label: "Family", key: "family" },
-    { label: "Scientific Name", key: "scientificName" },
-    { label: "Toxic To", key: "toxicTo" },
-    { label: "Toxic Principles", key: "toxicPrinciples" },
-    { label: "Clinical Signs", key: "clinicalSigns" },
+export default function PlantList({
+  commonNames,
+  family,
+  scientificName,
+  toxicTo,
+  toxicPrinciples,
+  clinicalSigns,
+}: PlantListProps) {
+  const plantLabelsAndValues: {
+    label: string;
+    value: string | string[] | null;
+  }[] = [
+    { label: "Common Names", value: commonNames },
+    { label: "Family", value: family },
+    { label: "Scientific Name", value: scientificName },
+    { label: "Toxic To", value: toxicTo },
+    { label: "Toxic Principles", value: toxicPrinciples },
+    { label: "Clinical Signs", value: clinicalSigns },
   ];
-
-  function isArrayKey<K extends keyof Plant>(key: K): boolean {
-    return key === "commonNames" || key === "toxicTo";
-  }
 
   return (
     <dl>
-      {plantLabelsAndFields
-        .filter(({ key }) => plant[key])
-        .map(({ label, key }, index, array) => (
+      {plantLabelsAndValues
+        .filter(({ value }) => value)
+        .map(({ label, value }, index, array) => (
           <div key={label}>
             <div className="flex flex-col">
               <dt className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-neutral-500 md:mb-0">
                 {label}
               </dt>
               <dd>
-                {isArrayKey(key) ? (
+                {Array.isArray(value) ? (
                   <div className="flex flex-wrap gap-1">
-                    {(plant[key] as string[]).map((item) => (
+                    {(value as string[]).map((item) => (
                       <Badge
                         key={item}
                         bgColor={
-                          key === "toxicTo" ? "bg-red-200" : "bg-gray-200"
+                          label === "Toxic To" ? "bg-red-200" : "bg-gray-200"
                         }
-                        textColor={key === "toxicTo" ? "text-[#842727]" : ""}
+                        textColor={label === "Toxic To" ? "text-[#842727]" : ""}
                       >
-                        {key === "toxicTo"
+                        {label === "Toxic To"
                           ? animalToEmoji[item] + " " + animalToPlural[item]
                           : item}
                       </Badge>
                     ))}
                   </div>
                 ) : (
-                  plant[key]
+                  value
                 )}
               </dd>
             </div>
