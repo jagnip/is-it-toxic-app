@@ -9,7 +9,7 @@ export default function SearchResults() {
           const plant = PLANTS[key];
           return (
             <li className="flex justify-between items-center p-2" key={key}>
-              <div className="flex flex-col">
+              <div className="flex flex-row gap-3">
                 <span>{plant.name}</span>{" "}
                 <span className="text-gray-500 ">{plant.scientificName}</span>
               </div>
