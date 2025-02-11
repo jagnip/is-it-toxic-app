@@ -45,9 +45,9 @@ export default function PlantDetails() {
   ];
 
   return (
-    <div className="shadow-lg rounded-xl p-6 bg-white border border-gray-100 ">
+    <div className="shadow-lg rounded-xl p-6 bg-white border border-gray-100 max-w-3xl">
       <div className="flex justify-between">
-        <button className="h-6 w-6 rounded-lg bg-neutral-200 transition-[background-color,box-shadow] hover:bg-neutral-300 focus-visible:ring-4 focus-visible:ring-blue-400/50">
+        <button className="h-6 w-6 rounded-lg bg-neutral-200 hover:bg-neutral-300 focus-visible:ring-4 focus-visible:ring-blue-400/50">
           ←
         </button>
         <a
