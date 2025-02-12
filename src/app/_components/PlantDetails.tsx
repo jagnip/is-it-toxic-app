@@ -12,7 +12,7 @@ export default function PlantDetails({ plantId }: PlantDetailsProps) {
   if (!plant) return <p>Plant not found</p>;
 
   return (
-    <div className="shadow-lg rounded-xl p-6 bg-white border border-gray-100 max-w-3xl">
+    <div className="shadow-[0_25px_50px_rgba(223,233,203,0.70)] rounded-xl p-6 bg-white border border-gray-100 max-w-3xl">
       <PlantHeader
         link={plant.link}
         name={plant.name}
