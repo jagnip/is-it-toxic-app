@@ -3,16 +3,15 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#f9fbf5] font-inter;
+  @apply bg-[linear-gradient(90deg,#FAFBF9_0%,#F8FDED_94%)] font-inter;
 }
 
 h1 {
   @apply font-fraunces text-center text-[4rem] sm:text-[5rem]  tracking-[-3px] font-light;
 }
 
-
 h2 {
-  @apply font-fraunces tracking-[-3px] font-light text-[3rem] sm:text-[3.75rem] ;
+  @apply font-fraunces tracking-[-3px] font-light text-[3rem] sm:text-[3.75rem];
 }
 
 h3 {
@@ -28,5 +27,3 @@ li {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-

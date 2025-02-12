@@ -11,7 +11,7 @@ export default function PlantHeader({
   return (
     <div>
       <div className="flex justify-between">
-        <button className="h-6 w-6 rounded-lg bg-neutral-200 hover:bg-neutral-300 focus-visible:ring-4 focus-visible:ring-blue-400/50">
+        <button className="h-6 w-6 flex items-center justify-center leading-none pb-[3px] rounded-lg bg-neutral-200 hover:bg-neutral-300 focus-visible:ring-4 focus-visible:ring-blue-400/50">
           ←
         </button>
         <a
