@@ -12,7 +12,7 @@ export default function SearchResults({ plants }: SearchResultsProps) {
       {Object.keys(plants).length > 0 ? (
     Object.entries(plants).map(([key, plant]) => (
             <li
-              className="flex justify-between items-center p-2 px-4 gap-1 hover:bg-[#f5f5f5e6] rounded"
+              className="flex transition-all duration-200 justify-between items-center p-2 px-4 gap-1 hover:bg-[#f5f5f5e6] rounded"
               key={key} 
             >
               <div className="flex flex-col md:flex-row md:gap-3">
