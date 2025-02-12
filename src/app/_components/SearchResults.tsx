@@ -1,14 +1,20 @@
-import { PLANTS } from "../_data/PLANTS";
+import { Plant } from "@/types";
 import { animalToEmoji } from "../_utils/animalTo";
 
-export default function SearchResults() {
+interface SearchResultsProps {
+  plants: Plant[];
+}
+
+export default function SearchResults({ plants }: SearchResultsProps) {
   return (
-    <div className="max-h-[400px] overflow-y-auto p-2 scrollbar-hide">
+    <div className="h-[400px] overflow-y-auto p-2 scrollbar-hide">
       <ul>
-        {Object.keys(PLANTS).map((key) => {
-          const plant = PLANTS[key];
-          return (
-            <li className="flex justify-between items-center p-2 px-4 gap-1 hover:bg-[#f5f5f5e6] rounded " key={key}>
+        {plants.length > 0 ? (
+          plants.map((plant, index) => (
+            <li
+              className="flex justify-between items-center p-2 px-4 gap-1 hover:bg-[#f5f5f5e6] rounded"
+              key={index} 
+            >
               <div className="flex flex-col md:flex-row md:gap-3">
                 <span>{plant.name}</span>{" "}
                 <span className="text-gray-500">{plant.scientificName}</span>
@@ -19,8 +25,10 @@ export default function SearchResults() {
                 ))}
               </div>
             </li>
-          );
-        })}
+          ))
+        ) : (
+          <li className="flex flex-col gap-2 items-center py-10  text-neutral-500 "><span className="text-3xl ">🥀</span> <span>Can't find your plant?</span><span>Try to search for scientific name instead.</span></li>
+        )}
       </ul>
     </div>
   );
