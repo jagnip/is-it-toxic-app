@@ -1,19 +1,19 @@
-import { Plant } from "@/types";
+import { Plants } from "@/types";
 import { animalToEmoji } from "../_utils/animalTo";
 
 interface SearchResultsProps {
-  plants: Plant[];
+  plants: Plants;
 }
 
 export default function SearchResults({ plants }: SearchResultsProps) {
   return (
     <div className="h-[400px] overflow-y-auto p-2 scrollbar-hide">
       <ul>
-        {plants.length > 0 ? (
-          plants.map((plant, index) => (
+      {Object.keys(plants).length > 0 ? (
+    Object.entries(plants).map(([key, plant]) => (
             <li
               className="flex justify-between items-center p-2 px-4 gap-1 hover:bg-[#f5f5f5e6] rounded"
-              key={index} 
+              key={key} 
             >
               <div className="flex flex-col md:flex-row md:gap-3">
                 <span>{plant.name}</span>{" "}
