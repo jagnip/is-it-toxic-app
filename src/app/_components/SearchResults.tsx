@@ -3,14 +3,14 @@ import { animalToEmoji } from "../_utils/animalTo";
 
 export default function SearchResults() {
   return (
-    <div className="max-h-[400px] overflow-y-auto p-4 scrollbar-hide">
+    <div className="max-h-[400px] overflow-y-auto p-2 scrollbar-hide">
       <ul>
         {Object.keys(PLANTS).map((key) => {
           const plant = PLANTS[key];
           return (
-            <li className="flex justify-between items-center p-2 gap-1" key={key}>
-              <div className="flex flex-col md:flex-row gap-3">
-                <span className="">{plant.name}</span>{" "}
+            <li className="flex justify-between items-center p-2 px-4 gap-1 hover:bg-[#f5f5f5e6] rounded " key={key}>
+              <div className="flex flex-col md:flex-row md:gap-3">
+                <span>{plant.name}</span>{" "}
                 <span className="text-gray-500">{plant.scientificName}</span>
               </div>
               <div className="bg-red-200 rounded-2xl flex px-1 py-0.5">
