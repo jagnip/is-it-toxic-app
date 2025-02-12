@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-  @apply font-fraunces text-center text-[4rem] sm:text-[5rem]  tracking-[-3px] font-light;
+  @apply font-fraunces text-center text-[3.5rem] sm:text-[5rem]  tracking-[-3px] font-light;
 }
 
 h2 {
