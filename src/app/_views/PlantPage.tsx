@@ -1,5 +1,9 @@
 import PlantDetails from "../_components/PlantDetails";
 
-export default function PlantPage() {
-  return <PlantDetails plantId="adam-and-eve arum maculatum" />;
+interface PlantPageProps {
+  plantId: string;
+}
+
+export default function PlantPage({ plantId }: PlantPageProps) {
+  return <PlantDetails plantId={plantId} />;
 }

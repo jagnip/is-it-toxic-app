@@ -8,7 +8,6 @@ interface PlantDetailsProps {
 
 export default function PlantDetails({ plantId }: PlantDetailsProps) {
   const plant = PLANTS[plantId];
-
   if (!plant) return <p>Plant not found</p>;
 
   return (
