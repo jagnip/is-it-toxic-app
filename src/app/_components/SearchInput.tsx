@@ -1,3 +1,4 @@
+import { usePathname } from "next/navigation";
 import { useRef, useEffect } from "react";
 
 interface SearchInputProps {
@@ -12,19 +13,13 @@ export default function SearchInput({
   setIsFocused,
 }: SearchInputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
-  // const pathname = usePathname();
+  const pathname = usePathname();
 
-  // useEffect(() => {
-  //   if (inputRef.current ) {
-  //     inputRef.current.focus();
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //     if (inputRef.current && (pathname === "/")) {
-  //       inputRef.current.focus();
-  //     }
-  // }, [pathname]);
+  useEffect(() => {
+      if (inputRef.current && (pathname === "/")) {
+        inputRef.current.focus();
+      }
+  }, [pathname]);
 
   return (
     <input
