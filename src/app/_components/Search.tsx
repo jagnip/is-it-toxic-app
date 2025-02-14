@@ -1,11 +1,17 @@
+"use client"
+
+import { Plants } from "@/types";
 import SearchInput from "./SearchInput";
 import SearchResults from "./SearchResults";
 import { useState } from "react";
-import { PLANTS } from "../_data/PLANTS";
 
-export default function Search() {
+interface SearchProps {
+  plants: Plants;
+}
+
+export default function Search({ plants }: SearchProps) {
   const [searchItem, setSearchItem] = useState<string>("");
-  const [filteredPlants, setFilteredPlants] = useState(PLANTS);
+  const [filteredPlants, setFilteredPlants] = useState(plants);
   const [isFocused, setIsFocused] = useState(false);
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -13,7 +19,7 @@ export default function Search() {
     setSearchItem(searchItem);
 
     const filteredPlants = Object.fromEntries(
-      Object.entries(PLANTS).filter(
+      Object.entries(plants).filter(
         ([key, plant]) =>
           plant.name.toLowerCase().includes(searchItem.toLowerCase()) ||
           plant.scientificName.toLowerCase().includes(searchItem.toLowerCase())
