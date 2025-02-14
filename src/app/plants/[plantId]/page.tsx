@@ -11,7 +11,7 @@ export default async function Plant({ params }: PlantPageProps) {
   const { plantId } = await params
   const decodedPlantId = decodeURIComponent(plantId);
 
-   const plants: Plants = await fetch("http://localhost:3000/api/plants").then(
+   const plants: Plants = await fetch("/api/plants").then(
       (result) => result.json()
     );
 
