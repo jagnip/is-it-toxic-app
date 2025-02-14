@@ -6,7 +6,7 @@ export default async function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   
-  const plants: Plants = await fetch("http://localhost:4000/plants").then(
+  const plants: Plants = await fetch("http://localhost:3000/api/plants").then(
     (result) => result.json()
   );
  
