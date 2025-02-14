@@ -1,13 +1,12 @@
-import { PLANTS } from "../_data/PLANTS";
+import { Plant } from "@/types";
 import PlantHeader from "./PlantHeader";
 import PlantList from "./PlantList";
 
 interface PlantDetailsProps {
-  plantId: string;
+  plant: Plant;
 }
 
-export default function PlantDetails({ plantId }: PlantDetailsProps) {
-  const plant = PLANTS[plantId];
+export default function PlantDetails({ plant }: PlantDetailsProps) {
   if (!plant) return <p>Plant not found</p>;
 
   return (

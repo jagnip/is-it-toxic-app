@@ -1,9 +1,10 @@
+import { Plant } from "@/types";
 import PlantDetails from "../_components/PlantDetails";
 
 interface PlantPageProps {
-  plantId: string;
+  plant: Plant;
 }
 
-export default function PlantPage({ plantId }: PlantPageProps) {
-  return <PlantDetails plantId={plantId} />;
+export default function PlantPage({ plant }: PlantPageProps) {
+  return <PlantDetails plant={plant} />;
 }

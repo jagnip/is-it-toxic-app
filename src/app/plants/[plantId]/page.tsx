@@ -1,4 +1,5 @@
 import PlantPage from "@/app/_views/PlantPage";
+import { Plants } from "@/types";
 
 interface PlantPageProps {
   params: {
@@ -10,5 +11,11 @@ export default async function Plant({ params }: PlantPageProps) {
   const { plantId } = await params
   const decodedPlantId = decodeURIComponent(plantId);
 
-  return <PlantPage plantId={decodedPlantId} />;
+   const plants: Plants = await fetch("http://localhost:4000/plants").then(
+      (result) => result.json()
+    );
+
+   
+
+  return <PlantPage plant={plants[decodedPlantId]} />;
 }
