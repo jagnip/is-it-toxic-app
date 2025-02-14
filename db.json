@@ -1,4 +1,5 @@
 {
+  "plants": {
     "adam-and-eve arum maculatum": {
       "name": "Adam-and-Eve",
       "commonNames": [
@@ -276,7 +277,12 @@
     },
     "australian ivy palm brassaia actinophylla": {
       "name": "Australian Ivy Palm",
-      "commonNames": ["Schefflera", "Umbrella Tree", "Octopus Tree", "Starleaf"],
+      "commonNames": [
+        "Schefflera",
+        "Umbrella Tree",
+        "Octopus Tree",
+        "Starleaf"
+      ],
       "scientificName": "Brassaia actinophylla",
       "family": "Araliaceae",
       "link": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/australian-ivy-palm",
@@ -526,7 +532,12 @@
     },
     "black laurel leucothoe spp": {
       "name": "Black Laurel",
-      "commonNames": ["Dog Hobble", "Dog Laurel", "Fetter Bush", "Sierra Laurel"],
+      "commonNames": [
+        "Dog Hobble",
+        "Dog Laurel",
+        "Fetter Bush",
+        "Sierra Laurel"
+      ],
       "scientificName": "Leucothoe spp.",
       "family": "Ericaceae",
       "link": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/black-laurel",
@@ -1877,7 +1888,12 @@
     },
     "figwort ranunculus acris": {
       "name": "Figwort",
-      "commonNames": ["Buttercup", "Butter Cress", "Burwort", "Crowfoot burwort"],
+      "commonNames": [
+        "Buttercup",
+        "Butter Cress",
+        "Burwort",
+        "Crowfoot burwort"
+      ],
       "scientificName": "Ranunculus acris",
       "family": "Ranunculaceae",
       "link": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/figwort",
@@ -2195,7 +2211,11 @@
     },
     "golden birds nest sansevieria trifasciata": {
       "name": "Golden Birds Nest",
-      "commonNames": ["Snake Plant", "Mother-in-Law’s Tongue", "Good Luck Plant"],
+      "commonNames": [
+        "Snake Plant",
+        "Mother-in-Law’s Tongue",
+        "Good Luck Plant"
+      ],
       "scientificName": "Sansevieria trifasciata",
       "family": "Agavaceae",
       "link": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/golden-birds-nest",
@@ -3042,7 +3062,12 @@
     },
     "lily of the palace hippeastrum spp": {
       "name": "Lily of the Palace",
-      "commonNames": ["Amaryllis", "Fire Lily", "Barbados Lily", "Ridderstjerne"],
+      "commonNames": [
+        "Amaryllis",
+        "Fire Lily",
+        "Barbados Lily",
+        "Ridderstjerne"
+      ],
       "scientificName": "Hippeastrum spp.",
       "family": "Amaryllidaceae",
       "link": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/lily-palace",
@@ -4347,7 +4372,12 @@
     },
     "ribbon plant dracaena spp": {
       "name": "Ribbon Plant",
-      "commonNames": ["Corn Plant", "Cornstalk Plant", "Dracaena", "Dragon Tree"],
+      "commonNames": [
+        "Corn Plant",
+        "Cornstalk Plant",
+        "Dracaena",
+        "Dragon Tree"
+      ],
       "scientificName": "Dracaena spp.",
       "family": "Agavaceae",
       "link": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/ribbon-plant",
@@ -5022,7 +5052,12 @@
     },
     "taro vine epipremnum aureum": {
       "name": "Taro Vine",
-      "commonNames": ["Golden Pothos", "Devil's Ivy", "Devil's Vine", "Ivy Arum"],
+      "commonNames": [
+        "Golden Pothos",
+        "Devil's Ivy",
+        "Devil's Vine",
+        "Ivy Arum"
+      ],
       "scientificName": "Epipremnum aureum",
       "family": "Araceae",
       "link": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/taro-vine",
@@ -5971,7 +6006,11 @@
     },
     "scouring rush equisetum arvense": {
       "name": "Scouring Rush",
-      "commonNames": ["Field Horsetail", "Common Horsetail", "Western Horsetail"],
+      "commonNames": [
+        "Field Horsetail",
+        "Common Horsetail",
+        "Western Horsetail"
+      ],
       "scientificName": "Equisetum arvense",
       "family": "Equisetaceae",
       "link": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/scouring-rush",
@@ -6004,7 +6043,12 @@
     },
     "swamp maple acer rubrum": {
       "name": "Swamp Maple",
-      "commonNames": ["Red Maple", "Scarlet Maple", "Curled Maple", "Soft Maple"],
+      "commonNames": [
+        "Red Maple",
+        "Scarlet Maple",
+        "Curled Maple",
+        "Soft Maple"
+      ],
       "scientificName": "Acer rubrum",
       "family": "Aceraceae",
       "link": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/swamp-maple",
@@ -6156,4 +6200,4 @@
       "clinicalSigns": "Gastrointestinal irritation, colic"
     }
   }
-  
+}

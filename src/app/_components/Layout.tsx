@@ -17,9 +17,7 @@ export default function Layout({
         <Search />
       </div>
 
-      {isPlantPage && (
-        <div className="m-4 xl:max-w-[600px] xl:flex-[4]">{children}</div>
-      )}
+      <div className="m-4 xl:max-w-[600px] xl:flex-[4]">{children}</div>
     </div>
   );
 }
