@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import Layout from "./_components/Layout";
 import "./globals.css";
+import PlantsProvider from "./_context/PlantsProvider";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -30,10 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${fraunces.variable} ${inter.variable}  antialiased`}
-      >
-        <Layout>{children}</Layout>
+      <body className={`${fraunces.variable} ${inter.variable}  antialiased`}>
+        <PlantsProvider>
+          <Layout>{children}</Layout>
+        </PlantsProvider>
       </body>
     </html>
   );

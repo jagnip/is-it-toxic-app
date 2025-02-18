@@ -1,7 +1,6 @@
 "use client";
 import Search from "./Search";
 import Header from "./Header";
-import { Plants } from "@/types";
 import { useContext } from "react";
 import PlantsContext from "../_context/PlantsContext";
 import { usePathname } from "next/navigation";
@@ -9,10 +8,9 @@ import { usePathname } from "next/navigation";
 export default function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const plants: Plants = useContext(PlantsContext);
-
   const pathname = usePathname();
   const isPlantPage = pathname.startsWith("/plants/");
+  const plants = useContext(PlantsContext);
 
   return (
     <div className="flex flex-col xl:flex-row xl:max-w-[100vw] xl:p-8 items-center justify-center xl:h-[100vh]">

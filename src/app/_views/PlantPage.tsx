@@ -6,9 +6,12 @@ import PlantsContext from "../_context/PlantsContext";
 
 type PlantPageProps = {
   plantId: string;
-}
+};
 
 export default function PlantPage({ plantId }: PlantPageProps) {
-  const plants: Plants = useContext(PlantsContext);
-  return <PlantDetails plant={plants[plantId]} />;
+  const plants: Plants | null = useContext(PlantsContext);
+
+  const plant = plants ? plants[plantId] ?? null : null;
+
+  return <PlantDetails plant={plant} />;
 }
