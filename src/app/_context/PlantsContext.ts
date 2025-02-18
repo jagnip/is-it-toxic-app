@@ -1,4 +1,4 @@
-import { Plants } from "@/types";
+import { Plant, Plants } from "@/types";
 import { createContext } from "react";
 
 async function getPlants(): Promise<Plants> {
@@ -6,9 +6,11 @@ async function getPlants(): Promise<Plants> {
   if (!response.ok) throw new Error("Failed to fetch plants");
   return response.json();
 }
-
 const plants: Plants = await getPlants();
 
 const PlantsContext = createContext<Plants>(plants);
+const PlantContext = createContext<Plant>(
+  plants["adam-and-eve arum maculatum"]
+);
 
-export default PlantsContext;
+export { PlantsContext, PlantContext };
