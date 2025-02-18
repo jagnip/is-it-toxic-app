@@ -9,8 +9,5 @@ async function getPlants(): Promise<Plants> {
 const plants: Plants = await getPlants();
 
 const PlantsContext = createContext<Plants>(plants);
-const PlantContext = createContext<Plant>(
-  plants["adam-and-eve arum maculatum"]
-);
 
-export { PlantsContext, PlantContext };
+export default PlantsContext;

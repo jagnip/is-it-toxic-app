@@ -3,15 +3,12 @@ import Search from "./Search";
 import Header from "./Header";
 import { Plants, Plant } from "@/types";
 import { useContext } from "react";
-import { PlantsContext, PlantContext } from "../_context/PlantsContext";
+import PlantsContext from "../_context/PlantsContext";
 
 export default function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const plants: Plants = useContext(PlantsContext);
-  const plant: Plant = useContext(PlantContext);
-
-  console.log(plants);
 
   return (
     <div className="flex flex-col xl:flex-row xl:max-w-[100vw] xl:p-8 items-center justify-center xl:h-[100vh]">
