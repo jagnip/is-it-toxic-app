@@ -4,7 +4,7 @@ import { Plants } from "@/types";
 import { animalToEmoji } from "../_utils/animalTo";
 import { useRouter } from "next/navigation";
 
-interface SearchResultsProps {
+type SearchResultsProps = {
   plants: Plants;
 }
 

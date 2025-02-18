@@ -2,7 +2,7 @@ import { Plant } from "@/types";
 import PlantHeader from "./PlantHeader";
 import PlantList from "./PlantList";
 
-interface PlantDetailsProps {
+type PlantDetailsProps = {
   plant: Plant;
 }
 

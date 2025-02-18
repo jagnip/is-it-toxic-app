@@ -3,8 +3,7 @@
 import { Plant } from "@/types";
 import { useRouter } from "next/navigation";
 
-interface PlantHeaderProps
-  extends Pick<Plant, "name" | "scientificName" | "link"> {}
+type PlantHeaderProps = Pick<Plant, "name" | "scientificName" | "link">;
 
 export default function PlantHeader({
   link,

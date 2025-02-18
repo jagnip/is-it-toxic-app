@@ -1,7 +1,7 @@
 import { usePathname } from "next/navigation";
 import { useRef, useEffect } from "react";
 
-interface SearchInputProps {
+type SearchInputProps = {
   searchItem: string;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   setIsFocused: (isFocused: boolean) => void;

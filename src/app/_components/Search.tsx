@@ -5,7 +5,7 @@ import SearchInput from "./SearchInput";
 import SearchResults from "./SearchResults";
 import { useState } from "react";
 
-interface SearchProps {
+type SearchProps = {
   plants: Plants;
 }
 

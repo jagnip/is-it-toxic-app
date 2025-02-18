@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 
-interface BadgeProps {
+type BadgeProps = {
   bgColor: string;
   textColor?: string;
   children: ReactNode;
-}
+};
 
 export default function Badge({ bgColor, textColor, children }: BadgeProps) {
   return (

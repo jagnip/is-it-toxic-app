@@ -4,7 +4,7 @@ import PlantDetails from "../_components/PlantDetails";
 import { useContext } from "react";
 import PlantsContext from "../_context/PlantsContext";
 
-interface PlantPageProps {
+type PlantPageProps = {
   plantId: string;
 }
 

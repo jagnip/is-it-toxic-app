@@ -1,7 +1,7 @@
 "use client";
 import Search from "./Search";
 import Header from "./Header";
-import { Plants, Plant } from "@/types";
+import { Plants } from "@/types";
 import { useContext } from "react";
 import PlantsContext from "../_context/PlantsContext";
 import { usePathname } from "next/navigation";

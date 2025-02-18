@@ -1,10 +1,10 @@
 import PlantPage from "@/app/_views/PlantPage";
 
-interface PlantPageProps {
+type PlantPageProps = {
   params: {
     plantId: string;
   };
-}
+};
 
 export default async function Plant({ params }: PlantPageProps) {
   const { plantId } = await params;

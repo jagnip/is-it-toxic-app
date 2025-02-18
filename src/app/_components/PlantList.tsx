@@ -2,16 +2,15 @@ import { animalToEmoji, animalToPlural } from "../_utils/animalTo";
 import Badge from "./Badge";
 import { Plant } from "@/types";
 
-interface PlantListProps
-  extends Pick<
-    Plant,
-    | "commonNames"
-    | "family"
-    | "scientificName"
-    | "toxicTo"
-    | "toxicPrinciples"
-    | "clinicalSigns"
-  > {}
+type PlantListProps = Pick<
+  Plant,
+  | "commonNames"
+  | "family"
+  | "scientificName"
+  | "toxicTo"
+  | "toxicPrinciples"
+  | "clinicalSigns"
+>;
 
 export default function PlantList({
   commonNames,
