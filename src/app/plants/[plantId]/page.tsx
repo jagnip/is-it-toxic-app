@@ -6,8 +6,8 @@ interface PlantPageProps {
   };
 }
 
-export default function Plant({ params }: PlantPageProps) {
-  const { plantId } = params;
+export default async function Plant({ params }: PlantPageProps) {
+  const { plantId } = await params;
   const decodedPlantId = decodeURIComponent(plantId);
 
   return <PlantPage plantId={decodedPlantId} />;
