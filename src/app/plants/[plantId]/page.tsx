@@ -1,9 +1,9 @@
 import PlantPage from "@/app/_views/PlantPage";
 
 type PlantPageProps = {
-  params: {
+  params: Promise<{
     plantId: string;
-  };
+  }>;
 };
 
 export default async function Plant({ params }: PlantPageProps) {

@@ -20,7 +20,7 @@ export default function Search({ plants }: SearchProps) {
 
     const filteredPlants = Object.fromEntries(
       Object.entries(plants).filter(
-        ([key, plant]) =>
+        ([_key, plant]) =>
           plant.name.toLowerCase().includes(searchItem.toLowerCase()) ||
           plant.scientificName.toLowerCase().includes(searchItem.toLowerCase())
       )

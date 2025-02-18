@@ -1,4 +1,4 @@
-import { Plant, Plants } from "@/types";
+import { Plants } from "@/types";
 import { createContext } from "react";
 
 async function getPlants(): Promise<Plants> {

@@ -39,7 +39,7 @@ export default function SearchResults({ plants }: SearchResultsProps) {
         ) : (
           <li className="flex flex-col gap-2 items-center py-10  text-neutral-500 ">
             <span className="text-3xl ">🥀</span>{" "}
-            <span>Can't find your plant?</span>
+            <span>Can&apos;t find your plant?</span>
             <span>Try to search for scientific name instead.</span>
           </li>
         )}
