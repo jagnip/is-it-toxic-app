@@ -1,10 +1,14 @@
-import { Plant } from "@/types";
+"use client";
+import { Plants } from "@/types";
 import PlantDetails from "../_components/PlantDetails";
+import { useContext } from "react";
+import PlantsContext from "../_context/PlantsContext";
 
 interface PlantPageProps {
-  plant: Plant;
+  plantId: string;
 }
 
-export default function PlantPage({ plant }: PlantPageProps) {
-  return <PlantDetails plant={plant} />;
+export default function PlantPage({ plantId }: PlantPageProps) {
+  const plants: Plants = useContext(PlantsContext);
+  return <PlantDetails plant={plants[plantId]} />;
 }
