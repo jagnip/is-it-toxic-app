@@ -7,9 +7,13 @@ export default function ScaleInContainer({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
+      initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{
+        duration: 0.5,
+        ease: "easeOut",
+        opacity: { duration: 0.05 },
+      }}
     >
       {children}
     </motion.div>
