@@ -4,6 +4,7 @@ import { Plants } from "@/types";
 import SearchInput from "./SearchInput";
 import SearchResults from "./SearchResults";
 import { useState, useEffect } from "react";
+import { LOADING_PLANTS } from "../_constants/PLANTSTOLOAD";
 
 type SearchProps = {
   plants: Plants | null;
@@ -11,11 +12,11 @@ type SearchProps = {
 
 export default function Search({ plants }: SearchProps) {
   const [searchItem, setSearchItem] = useState<string>("");
-  const [filteredPlants, setFilteredPlants] = useState(plants);
+  const [filteredPlants, setFilteredPlants] = useState(LOADING_PLANTS);
   const [isFocused, setIsFocused] = useState(false);
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
-    if (!plants) return; 
+    if (!plants) return;
 
     const searchItem = e.target.value.toLowerCase();
     setSearchItem(searchItem);
@@ -31,6 +32,7 @@ export default function Search({ plants }: SearchProps) {
   }
 
   useEffect(() => {
+    if (!plants) return;
     setFilteredPlants(plants);
   }, [plants]);
 

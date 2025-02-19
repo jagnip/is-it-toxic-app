@@ -5,7 +5,7 @@ import { animalToEmoji } from "../_utils/animalTo";
 import { useRouter } from "next/navigation";
 
 type SearchResultsProps = {
-  plants: Plants | null;
+  plants: Plants;
 };
 
 export default function SearchResults({ plants }: SearchResultsProps) {
@@ -13,15 +13,6 @@ export default function SearchResults({ plants }: SearchResultsProps) {
 
   function handlePlantClick(plantId: string) {
     router.push(`/plants/${plantId}`);
-  }
-
-  if (!plants) {
-    return (
-      <div className="flex flex-col gap-2 items-center py-10 text-neutral-500">
-        <span className="text-3xl">🌱</span>
-        <span>Loading plants...</span>
-      </div>
-    );
   }
 
   return (
