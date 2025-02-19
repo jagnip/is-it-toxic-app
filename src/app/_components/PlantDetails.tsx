@@ -1,6 +1,7 @@
 import { Plant } from "@/types";
 import PlantHeader from "./PlantHeader";
 import PlantList from "./PlantList";
+import { useEffect } from "react";
 
 type PlantDetailsProps = {
   plant: Plant | null;
