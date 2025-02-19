@@ -5,8 +5,8 @@ import Header from "./Header";
 import { useContext } from "react";
 import PlantsContext from "../_context/PlantsContext";
 import { usePathname } from "next/navigation";
-import FadeInDownContainer from "../_animations/FadeInDownContainer";
-import ScaleInContainer from "../_animations/ScaleInContainer";
+import FadeScaleInDownContainer from "../_animations/FadeScaleInDownContainer";
+import FadeScaleInContainer from "../_animations/FadeScaleInContainer";
 
 export default function Layout({
   children,
@@ -18,18 +18,18 @@ export default function Layout({
   return (
     <div className="flex flex-col xl:flex-row xl:max-w-[100vw] xl:p-8 items-center justify-center xl:h-[100vh]">
       <div className="m-8 flex flex-col items-center justify-center gap-2 xl:flex-[3] xl:max-w-[550px]">
-        <FadeInDownContainer>
+        <FadeScaleInDownContainer>
           <Header />
-        </FadeInDownContainer>
-        <ScaleInContainer>
+        </FadeScaleInDownContainer>
+        <FadeScaleInContainer>
           <Search plants={plants} />
-        </ScaleInContainer>
+        </FadeScaleInContainer>
       </div>
 
       {isPlantPage && (
-        <ScaleInContainer>
+        <FadeScaleInContainer>
           <div className="m-4 xl:max-w-[600px] xl:flex-[4]">{children}</div>
-        </ScaleInContainer>
+        </FadeScaleInContainer>
       )}
     </div>
   );

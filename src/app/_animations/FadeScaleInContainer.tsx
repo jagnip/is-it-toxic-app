@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function ScaleInContainer({
+export default function FadeScaleInContainer({
   children,
 }: {
   children: React.ReactNode;
