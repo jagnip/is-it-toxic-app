@@ -1,4 +1,4 @@
-import FadeScaleInDownContainer from "../_animations/FadeScaleInDownContainer";
+import FadeScaleInDownContainer from "../_animations/FadeInOutContainer";
 
 export default function Header() {
   return (

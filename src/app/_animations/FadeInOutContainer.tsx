@@ -7,12 +7,11 @@ export default function FadeScaleInDownContainer({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 100, scale: 0.8 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1}}
       transition={{
-        duration: 0.4,
+        duration: 0.5,
         ease: "easeOut",
-        opacity: { delay: 0.05, duration: 0.1 },
       }}
     >
       {children}
