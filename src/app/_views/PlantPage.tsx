@@ -15,8 +15,6 @@ export default function PlantPage({ plantId }: PlantPageProps) {
   const plant = plants ? plants[plantId] ?? null : null;
 
   return (
-    <AnimatePresence mode="wait">
       <PlantDetails plant={plant} />
-    </AnimatePresence>
   );
 }
