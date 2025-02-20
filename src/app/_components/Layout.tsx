@@ -5,9 +5,8 @@ import Header from "./Header";
 import { useContext } from "react";
 import PlantsContext from "../_context/PlantsContext";
 import { usePathname } from "next/navigation";
-import FadeScaleInDownContainer from "../_animations/FadeScaleInDownContainer";
+
 import { AnimatePresence } from "framer-motion";
-import FadeScaleInOutContainer from "../_animations/FadeScaleInOutContainer";
 
 export default function Layout({
   children,
@@ -19,21 +18,16 @@ export default function Layout({
   return (
     <div className="flex flex-col xl:flex-row xl:max-w-[100vw] xl:p-8 items-center justify-center xl:h-[100vh]">
       <div className="m-8 flex flex-col items-center justify-center gap-2 xl:flex-[3] xl:max-w-[550px]">
-        <FadeScaleInDownContainer>
-          <Header />
-        </FadeScaleInDownContainer>
-        <FadeScaleInOutContainer>
-          <Search plants={plants} />
-        </FadeScaleInOutContainer>
+        <Header />
+        <Search plants={plants} />
       </div>
 
-      <AnimatePresence mode="wait">
-        {isPlantPage && (
-          <FadeScaleInOutContainer>
-            <div className="m-4 xl:max-w-[600px] xl:flex-[4]">{children}</div>
-          </FadeScaleInOutContainer>
-        )}
-      </AnimatePresence>
+      {isPlantPage && (
+        <div className="m-4 xl:max-w-[600px] xl:flex-[4]">
+          {" "}
+          {children} 
+        </div>
+      )}
     </div>
   );
 }
